@@ -11,6 +11,8 @@
 
 `brew install git`
 
+install.sh
+
 ### 1.3 安装 ruby
 
 1. 安装 ruby
@@ -40,9 +42,12 @@
 8. 搜狗输入法（`brew cask install sogouinput`)
 9. 微信（`brew cask install wechat`)
 10. vscode (`brew cask install visual-studio-code`)
+    - shell format (`brew install shfmt`)
+    - python
 11. typora `(brew cask install typora`)
 12. mounty(`brew cask install mounty`)
 13. go2shell (`brew cask install go2shell`)
+    - 把go2shell 的默认终端设置为 iterm2 `defaults write com.zipzapmac.Go2Shell "Terminal Identifier" "com.googlecode.iterm2"`
 14. the unarchiver (`brew cask install the-unarchiver`)
 15. vlc视频播放器 (`brew cask install vlc`)
 
@@ -64,10 +69,31 @@
 1. 生成 ssh
    - 在桌面上生成一个文件夹，里面放一个 ssh-publickey 的快捷方式，省的去文件夹里面找
 2. 总是可以打开自己下载的执行文件
-3. 三只拖动窗口 (目前这个脚本貌似已经没用了)
+```
+sudo spctl --master-disable
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+```
+3. 三指拖动窗口 (目前这个脚本貌似已经没用了)
 ```
 # Enable three finger to drag
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+# defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
 ```
-4. 
+4. 关闭自动修正
+```
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+```
+5. F1-F12 的功能键需要使用 fn 来激活
+```
+defaults write -g com.apple.keyboard.fnState -int 1
+```
+6. 自动隐藏 dock
+```
+defaults write com.apple.dock autohide -bool true
+```
+7. 自动隐藏上面工具栏
+
