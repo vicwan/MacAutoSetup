@@ -18,6 +18,7 @@
 install.sh
 
 ### 1.3 安装 ruby
+- 独立出来
 
 1. 安装 ruby
 2. 把 ruby 更换为国内源
