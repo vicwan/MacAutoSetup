@@ -1,0 +1,10 @@
+#!bin/expect
+
+source config
+
+# 还要解决 password 引用传参的问题
+spawn sudo spctl --master-disable
+expect "Password:"
+send "$(sys_password)\r"
+
+interact
